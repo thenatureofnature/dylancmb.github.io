@@ -8,11 +8,12 @@
     <style>
         /* CSS for the typewriter effect */
         .typewriter {
+            display: inline; /* Ensure it takes only necessary space */
             font-family: monospace;
             overflow: hidden; /* Ensures that text doesn't overflow */
             white-space: nowrap; /* Prevents text from wrapping */
             border-right: .15em solid orange; /* The typewriter cursor */
-            animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
+            animation: typing 4s steps(40, end), blink .75s step-end infinite;
         }
 
         @keyframes typing {
@@ -35,6 +36,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            text-align: center; /* Center the text */
         }
         
         h1, h2, p {
