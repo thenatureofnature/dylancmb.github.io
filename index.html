@@ -60,6 +60,26 @@
         .button:hover {
             background-color: rgba(255, 255, 255, 0.4);
         }
+
+        #transition-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
+
+        #transition-text {
+            font-size: 24px;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -76,6 +96,20 @@
         <a href="#research" class="button">Research</a>
         <a href="#publications" class="button">Publications</a>
         <a href="#notes" class="button">Notes</a>
+    </div>
+
+    <div id="notesButtons" style="display: none;">
+        <a href="#" class="button">Quantum Field Theory</a>
+        <a href="#" class="button">Astrophysics and Cosmology</a>
+        <a href="#" class="button">Mathematical Physics</a>
+        <a href="#" class="button">Electrodynamics</a>
+        <a href="#" class="button">College Physics</a>
+        <a href="#" class="button">College Chemistry</a>
+        <a href="#" class="button">College Mathematics</a>
+    </div>
+
+    <div id="transition-screen">
+        <div id="transition-text">The small scale beauty of our Universe</div>
     </div>
 
     <script>
@@ -106,21 +140,41 @@
 
             // Background image rotation
             const images = [
-                'https://i.pinimg.com/originals/e2/a9/d8/e2a9d83cd8d405ebb931ddb5c65fe43c.jpg',
-                'https://www.cfa.harvard.edu/sites/default/files/styles/max_650x650/public/2019-04/LargeScaleStructure_2.jpg?itok=TQm0F06z'
+                'https://www.cfa.harvard.edu/sites/default/files/styles/max_650x650/public/2019-04/LargeScaleStructure_2.jpg?itok=TQm0F06z',
+                'https://i.pinimg.com/originals/e2/a9/d8/e2a9d83cd8d405ebb931ddb5c65fe43c.jpg'
             ];
             let currentIndex = 0;
+            const transitionScreen = document.getElementById('transition-screen');
 
             function changeBackground() {
-                document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
-                currentIndex = (currentIndex + 1) % images.length;
+                transitionScreen.style.opacity = '1';
+                setTimeout(() => {
+                    document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+                    currentIndex = (currentIndex + 1) % images.length;
+                    setTimeout(() => {
+                        transitionScreen.style.opacity = '0';
+                    }, 1000);
+                }, 1000);
             }
 
             // Initial background set
-            changeBackground();
+            document.body.style.backgroundImage = `url('${images[0]}')`;
 
-            // Change background every 5 seconds
-            setInterval(changeBackground, 5000);
+            // Change background every 10 seconds
+            setInterval(changeBackground, 10000);
+
+            // Notes button functionality
+            const notesButton = document.querySelector('a[href="#notes"]');
+            const notesButtons = document.getElementById('notesButtons');
+
+            notesButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (notesButtons.style.display === 'none') {
+                    notesButtons.style.display = 'block';
+                } else {
+                    notesButtons.style.display = 'none';
+                }
+            });
         };
     </script>
 </body>
