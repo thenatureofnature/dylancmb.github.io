@@ -6,7 +6,6 @@
     <title>Santosh Poudel - Physics Student</title>
     <style>
         body {
-            background-image: url('https://www.dunlap.utoronto.ca/wp-content/uploads/2017/03/galseq_D_063.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -15,6 +14,7 @@
             margin: 0;
             padding: 20px;
             text-align: center;
+            transition: background-image 1s ease-in-out;
         }
         
         h1, h2, p {
@@ -103,6 +103,24 @@
                 }, delay);
                 delay += item.text.length * 100 + 1000; // Add extra delay between elements
             });
+
+            // Background image rotation
+            const images = [
+                'https://i.pinimg.com/originals/e2/a9/d8/e2a9d83cd8d405ebb931ddb5c65fe43c.jpg',
+                'https://www.cfa.harvard.edu/sites/default/files/styles/max_650x650/public/2019-04/LargeScaleStructure_2.jpg?itok=TQm0F06z'
+            ];
+            let currentIndex = 0;
+
+            function changeBackground() {
+                document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+                currentIndex = (currentIndex + 1) % images.length;
+            }
+
+            // Initial background set
+            changeBackground();
+
+            // Change background every 5 seconds
+            setInterval(changeBackground, 5000);
         };
     </script>
 </body>
