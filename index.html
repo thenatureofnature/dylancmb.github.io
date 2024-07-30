@@ -7,15 +7,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* (Keep the existing styles) */
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #7986cb;
+            --accent-color: #ff4081;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
         .hero {
-            height: 100vh;
+            background: url('https://source.unsplash.com/random/1600x900/?cosmos') no-repeat center center/cover;
+            height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: url('https://source.unsplash.com/random/1600x900/?cosmos') no-repeat center center/cover;
             position: relative;
         }
 
@@ -32,250 +80,161 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
             color: white;
+            margin-bottom: 1rem;
         }
 
         .hero p {
-            font-size: 1.5rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            font-size: 1.2rem;
             color: #f0f0f0;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .cta-buttons {
+        main {
+            display: flex;
+            margin-top: 2rem;
+        }
+
+        .sidebar {
+            width: 250px;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: block;
+        }
+
+        .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #e91e63;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button.secondary {
-            background-color: transparent;
-            border: 2px solid white;
-        }
-
-        .cta-button.secondary:hover {
-            background-color: white;
+        .social-links a {
             color: var(--primary-color);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
         }
 
-        .scroll-down {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 2rem;
-            animation: bounce 2s infinite;
+        .content {
+            flex: 1;
+            padding: 0 2rem;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-30px);
-            }
-            60% {
-                transform: translateY(-15px);
-            }
-        }
-
-        .featured-research {
-            padding: 4rem 0;
-            background-color: var(--bg-color);
-        }
-
-        .featured-research h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+        h2 {
+            font-family: 'Playfair Display', serif;
             color: var(--primary-color);
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .research-item {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .research-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .research-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .research-content {
-            padding: 1.5rem;
-        }
-
-        .research-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .research-content p {
-            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
-        .research-link {
-            display: inline-block;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: bold;
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
         }
 
-        .research-link:hover {
-            text-decoration: underline;
+        .skill-item {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                <h1>Santosh Poudel</h1>
-                <p class="tagline">Exploring the Cosmos, One Discovery at a Time</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Unraveling the Mysteries of the Universe</h1>
-            <p>Join me on a cosmic journey as we explore the wonders of astrophysics and cosmology.</p>
-            <div class="cta-buttons">
-                <a href="research.html" class="cta-button">Explore Research</a>
-                <a href="contact.html" class="cta-button secondary">Get in Touch</a>
-            </div>
+            <h1>Santosh Poudel</h1>
+            <p>Exploring the Cosmos, One Discovery at a Time</p>
         </div>
-        <a href="#featured-research" class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
-        </a>
     </section>
 
-    <section id="featured-research" class="featured-research">
-        <div class="container">
-            <h2>Featured Research</h2>
-            <div class="research-grid">
-                <div class="research-item">
-                    <div class="research-image" style="background-image: url('https://source.unsplash.com/random/400x300/?galaxy');"></div>
-                    <div class="research-content">
-                        <h3>Cosmic Voids</h3>
-                        <p>Exploring the vast, empty regions of space to understand the large-scale structure of the Universe.</p>
-                        <a href="research.html#cosmic-voids" class="research-link">Learn More</a>
-                    </div>
-                </div>
-                <div class="research-item">
-                    <div class="research-image" style="background-image: url('https://source.unsplash.com/random/400x300/?star');"></div>
-                    <div class="research-content">
-                        <h3>Variable Stars</h3>
-                        <p>Studying stellar variability to improve cosmic distance measurements and our understanding of stellar evolution.</p>
-                        <a href="research.html#variable-stars" class="research-link">Learn More</a>
-                    </div>
-                </div>
-                <div class="research-item">
-                    <div class="research-image" style="background-image: url('https://source.unsplash.com/random/400x300/?universe');"></div>
-                    <div class="research-content">
-                        <h3>Cosmic Microwave Background</h3>
-                        <p>Analyzing the oldest light in the Universe to uncover secrets about its early stages and evolution.</p>
-                        <a href="research.html#cosmic-microwave-background" class="research-link">Learn More</a>
-                    </div>
-                </div>
+    <main class="container">
+        <aside class="sidebar">
+            <img src="your-profile-image.jpg" alt="Santosh Poudel" class="profile-image">
+            <h3>Santosh Poudel</h3>
+            <p>Astrophysicist & Cosmologist</p>
+            <p>Location: [Your Location]</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
             </div>
+        </aside>
+
+        <div class="content">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am an [Your Position] at [Your Institution]. My research focuses on [Your Research Areas].</p>
+            </section>
+
+            <section id="research">
+                <h2>Research Interests</h2>
+                <ul>
+                    <li>Cosmic Voids</li>
+                    <li>Dark Energy and Dark Matter</li>
+                    <li>Large-scale Structure of the Universe</li>
+                    <!-- Add more research interests -->
+                </ul>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <h4>Programming Languages</h4>
+                        <p>Python, C++, FORTRAN</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Data Analysis</h4>
+                        <p>Machine Learning, Statistical Analysis</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Astrophysics Tools</h4>
+                        <p>AstroPy, MESA, GADGET</p>
+                    </div>
+                    <!-- Add more skills -->
+                </div>
+            </section>
         </div>
-    </section>
+    </main>
 
     <footer>
-        <div class="container footer-content">
-            <div class="footer-nav">
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-researchgate"></i></a>
-            </div>
-        </div>
-        <div class="container">
-            <p>&copy; 2024 Santosh Poudel. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Santosh Poudel. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Smooth scrolling for the scroll-down arrow
-        document.querySelector('.scroll-down').addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-
-        // Typing effect for the hero section tagline
-        const tagline = document.querySelector('.tagline');
-        const taglineText = tagline.textContent;
-        tagline.textContent = '';
-        let i = 0;
-        const typeWriter = () => {
-            if (i < taglineText.length) {
-                tagline.textContent += taglineText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        };
-        typeWriter();
-    </script>
 </body>
 </html>
