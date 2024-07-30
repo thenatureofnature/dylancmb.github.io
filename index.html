@@ -4,46 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santosh Poudel - Astrophysicist & Cosmologist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary-color: #1a237e;
             --secondary-color: #7986cb;
+            --accent-color: #ff4081;
             --text-color: #333;
             --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             padding: 2rem 0;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        h1 {
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-style: italic;
+            opacity: 0.8;
         }
 
         nav ul {
             list-style: none;
-            padding: 0;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 0.5rem 1rem;
+            margin-left: 1.5rem;
         }
 
         nav ul li a {
@@ -59,134 +83,579 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
 
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: url('https://source.unsplash.com/random/1600x900/?cosmos') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #f0f0f0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e91e63;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
         main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        section {
-            background: white;
+        .card {
+            background-color: var(--card-bg);
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        section:hover {
+        .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
         }
 
-        h2 {
+        .card-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
         }
 
-        .section-content {
-            display: none;
+        .research-interests {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
         }
 
-        .section-content.active {
-            display: block;
+        .interest-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
         }
 
-        ul, ol {
-            padding-left: 1.5rem;
+        .interest-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1 1 300px;
+            max-width: 300px;
+            transition: all 0.3s ease;
         }
 
-        a {
+        .interest-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .publications {
+            padding: 4rem 0;
+        }
+
+        .publication-list {
+            list-style: none;
+        }
+
+        .publication-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
             color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        a:hover {
+        .publication-authors {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-journal {
             color: var(--secondary-color);
         }
 
-        footer {
-            text-align: center;
+        .resources {
+            background-color: var(--bg-color);
+            padding: 4rem 0;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .resource-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .resource-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .resource-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .resource-description {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-link {
+            display: inline-block;
             background-color: var(--primary-color);
             color: white;
-            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .footer-nav ul li {
+            margin-right: 1.5rem;
+        }
+
+        .footer-nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
         }
 
         @media (max-width: 768px) {
-            main {
-                grid-template-columns: 1fr;
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+
+            .social-links {
+                margin-top: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Santosh Poudel</h1>
-        <p>Exploring the Cosmos, One Discovery at a Time</p>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="toggleSection('about'); return false;">About</a></li>
-                <li><a href="#" onclick="toggleSection('research'); return false;">Research</a></li>
-                <li><a href="#" onclick="toggleSection('publications'); return false;">Publications</a></li>
-                <li><a href="#" onclick="toggleSection('notes'); return false;">Notes</a></li>
-            </ul>
-        </nav>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>Santosh Poudel</h1>
+                <p class="tagline">Exploring the Cosmos, One Discovery at a Time</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Unraveling the Mysteries of the Universe</h2>
+            <p>Join me on a cosmic journey as we explore the wonders of astrophysics and cosmology.</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
     <main>
-        <section id="about" class="section-content active">
-            <h2>About Me</h2>
-            <p>I'm passionate about unraveling the mysteries of the Universe. My journey in astrophysics and cosmology is driven by an insatiable curiosity about the cosmos and its intricate workings.</p>
-            <p>Through my research, I aim to contribute to our understanding of the Universe's structure, evolution, and fundamental laws.</p>
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <i class="fas fa-user-astronaut card-icon"></i>
+                        <h3>Background</h3>
+                        <p>With a passion for understanding the cosmos, I've dedicated my career to pushing the boundaries of our knowledge in astrophysics and cosmology.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-graduation-cap card-icon"></i>
+                        <h3>Education</h3>
+                        <p>Ph.D. in Astrophysics from [University Name]<br>M.Sc. in Physics from [University Name]<br>B.Sc. in Physics from [University Name]</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-flask card-icon"></i>
+                        <h3>Expertise</h3>
+                        <p>Specializing in cosmic voids, variable stars, and cosmic microwave background radiation, I combine theoretical knowledge with advanced computational methods.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="research" class="section-content">
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Cosmic Voids: Exploring the vast, empty regions of space</li>
-                <li>Variable Stars: Leveraging stellar variability for cosmic distance measurement</li>
-                <li>Cosmic Microwave Background Radiation: Probing the early Universe</li>
-            </ul>
-            <p>My approach combines computational methods with theoretical physics, allowing me to tackle complex problems in astrophysics and cosmology.</p>
+        <section id="research" class="research-interests">
+            <div class="container">
+                <h2 class="section-title">Research Interests</h2>
+                <div class="interest-list">
+                    <div class="interest-item">
+                        <i class="fas fa-spider-web interest-icon"></i>
+                        <h3>Cosmic Voids</h3>
+                        <p>Exploring the vast, empty regions of space to understand the large-scale structure of the Universe.</p>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-star interest-icon"></i>
+                        <h3>Variable Stars</h3>
+                        <p>Studying stellar variability to improve cosmic distance measurements and our understanding of stellar evolution.</p>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-broadcast-tower interest-icon"></i>
+                        <h3>Cosmic Microwave Background</h3>
+                        <p>Analyzing the oldest light in the Universe to uncover secrets about its early stages and evolution.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="publications" class="section-content">
-            <h2>Key Publications</h2>
-            <ol>
-                <li>"Multimode Pulsation Analysis in Stellar Atmospheres"</li>
-                <li>"Optimization of Cosmic Void Detection Algorithms"</li>
-            </ol>
-            <p>For a complete list of my publications, please visit my <a href="https://scholar.google.com/citations?user=example_user_id" target="_blank">Google Scholar profile</a>.</p>
+        <section id="publications" class="publications">
+            <div class="container">
+                <h2 class="section-title">Recent Publications</h2>
+                <ul class="publication-list">
+                    <li class="publication-item">
+                        <h3 class="publication-title">Multimode Pulsation Analysis in Stellar Atmospheres</h3>
+                        <p class="publication-authors">Poudel, S., Smith, J., & Johnson, K.</p>
+                        <p class="publication-journal">The Astrophysical Journal, 2023</p>
+                    </li>
+                    <li class="publication-item">
+                        <h3 class="publication-title">Optimization of Cosmic Void Detection Algorithms</h3>
+                        <p class="publication-authors">Poudel, S., & Brown, A.</p>
+                        <p class="publication-journal">Monthly Notices of the Royal Astronomical Society, 2022</p>
+                    </li>
+                    <li class="publication-item">
+                        <h3 class="publication-title">New Insights into the Cosmic Microwave Background Anisotropies</h3>
+                        <p class="publication-authors">Poudel, S., Lee, M., & Garcia, R.</p>
+                        <p class="publication-journal">Physical Review D, 2021</p>
+                    </li>
+                </ul>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://scholar.google.com/citations?user=example_user_id" target="_blank" class="cta-button">View All Publications</a>
+                </div>
+            </div>
         </section>
 
-        <section id="notes" class="section-content">
-            <h2>Educational Resources</h2>
-            <p>I've compiled a set of notes and resources on various topics in astronomy, astrophysics, and theoretical physics:</p>
-            <ul>
-                <li><a href="notes/astro.pdf">Exploring Exoplanets</a></li>
-                <li><a href="notes/cosmo.pdf">Stellar Evolution</a></li>
-                <li><a href="notes/computational_methods.pdf">Computational Methods in Astrophysics</a></li>
-            </ul>
+        <section id="resources" class="resources">
+            <div class="container">
+                <h2 class="section-title">Educational Resources</h2>
+                <div class="resource-grid">
+                    <div class="resource-item">
+                        <i class="fas fa-rocket resource-icon"></i>
+                        <h3 class="resource-title">Exploring Exoplanets</h3>
+                        <p class="resource-description">A comprehensive guide to the search for and study of planets beyond our solar system.</p>
+                        <a href="notes/exoplanets.pdf" class="resource-link">Download PDF</a>
+                    </div>
+                    <div class="resource-item">
+                        <i class="fas fa-sun resource-icon"></i>
+                        <h3 class="resource-title">Stellar Evolution</h3>
+                        <p class="resource-description">Explore the life cycles of stars, from birth to their ultimate fates.</p>
+                        <a href="notes/stellar_evolution.pdf" class="resource-link">Download PDF</a>
+                    </div>
+                    <div class="resource-item">
+                        <i class="fas fa-laptop-code resource-icon"></i>
+                        <h3 class="resource-title">Computational Methods in Astrophysics</h3>
+                        <p class="resource-description">An introduction to essential computational techniques used in modern astrophysics research.</p>
+                        <a href="notes/computational_methods.pdf" class="resource-link">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Santosh Poudel | Astrophysicist & Cosmologist</p>
+        <div class="container footer-content">
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-researchgate"></i></a>
+            </div>
+        </div>
+        <div class="container">
+            <p>&copy; 2024 Santosh Poudel. All rights reserved.</p>
+        </div>
     </footer>
 
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <script>
-        function toggleSection(sectionId) {
-            document.querySelectorAll('.section-content').forEach(section => {
-                section.classList.remove('active');
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-            document.getElementById(sectionId).classList.add('active');
-        }
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form submission handling
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            // For this example, we'll just log it to the console
+            console.log('Form submitted!');
+            console.log('Name:', contactForm.name.value);
+            console.log('Email:', contactForm.email.value);
+            console.log('Message:', contactForm.message.value);
+            // Reset the form after submission
+            contactForm.reset();
+            alert('Thank you for your message. I will get back to you soon!');
+        });
+
+        // Add some animation to the cards on scroll
+        const cards = document.querySelectorAll('.card, .interest-item, .publication-item, .resource-item');
+        const animateCards = () => {
+            const triggerBottom = window.innerHeight / 5 * 4;
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if(cardTop < triggerBottom) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(50px)';
+                }
+            });
+        };
+        window.addEventListener('scroll', animateCards);
+        animateCards(); // Call once to set initial state
+
+        // Typing effect for the hero section tagline
+        const tagline = document.querySelector('.tagline');
+        const taglineText = tagline.textContent;
+        tagline.textContent = '';
+        let i = 0;
+        const typeWriter = () => {
+            if (i < taglineText.length) {
+                tagline.textContent += taglineText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        };
+        typeWriter();
     </script>
 </body>
 </html>
