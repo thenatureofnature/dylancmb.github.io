@@ -61,18 +61,21 @@
             background-color: rgba(255, 255, 255, 0.4);
         }
 
-        #notesButtons {
+        #notesContent {
             display: none;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
-        #notesButtons a {
+        #notesContent a {
+            display: block;
             color: white;
             text-decoration: none;
-            margin: 5px 10px;
+            margin: 10px 0;
             font-size: 16px;
+        }
+
+        #notesContent a:hover {
+            text-decoration: underline;
         }
 
         #transition-text {
@@ -104,14 +107,14 @@
         <a href="#notes" class="button" id="notesButton">Notes</a>
     </div>
 
-    <div id="notesButtons">
-        <a href="#">Quantum Field Theory</a>
-        <a href="#">Astrophysics and Cosmology</a>
-        <a href="#">Mathematical Physics</a>
-        <a href="#">Electrodynamics</a>
-        <a href="#">College Physics</a>
-        <a href="#">College Chemistry</a>
-        <a href="#">College Mathematics</a>
+    <div id="notesContent">
+        <a href="#quantum-field-theory">1. Quantum Field Theory</a>
+        <a href="#astrophysics-cosmology">2. Astrophysics and Cosmology</a>
+        <a href="#mathematical-physics">3. Mathematical Physics</a>
+        <a href="#electrodynamics">4. Electrodynamics</a>
+        <a href="#college-physics">5. College Physics</a>
+        <a href="#college-chemistry">6. College Chemistry</a>
+        <a href="#college-mathematics">7. College Mathematics</a>
     </div>
 
     <div id="transition-text">The small scale beauty of our Universe</div>
@@ -165,14 +168,14 @@
 
             // Notes button functionality
             const notesButton = document.getElementById('notesButton');
-            const notesButtons = document.getElementById('notesButtons');
+            const notesContent = document.getElementById('notesContent');
 
             notesButton.addEventListener('click', function(e) {
                 e.preventDefault();
-                if (notesButtons.style.display === 'none' || notesButtons.style.display === '') {
-                    notesButtons.style.display = 'flex';
+                if (notesContent.style.display === 'none' || notesContent.style.display === '') {
+                    notesContent.style.display = 'block';
                 } else {
-                    notesButtons.style.display = 'none';
+                    notesContent.style.display = 'none';
                 }
             });
         };
