@@ -3,182 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santosh Poudel - Physics Student</title>
+    <title>Your Name - Personal Website</title>
     <style>
         body {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: white;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            text-align: center;
-            transition: background-image 1s ease-in-out;
+            padding: 0;
+            display: flex;
         }
         
-        h1, h2, p {
-            margin: 0;
-            padding: 10px 0;
-        }
-
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid orange;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: blink-caret .75s step-end infinite;
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: orange; }
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .button {
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
+        .sidebar {
+            width: 200px;
+            background-color: #1a1a2e;
             color: white;
-            padding: 10px 20px;
-            text-align: center;
+            padding: 20px;
+            height: 100vh;
+        }
+        
+        .main-content {
+            flex-grow: 1;
+        }
+        
+        .hero {
+            background-image: url('path-to-your-hero-image.jpg');
+            background-size: cover;
+            color: white;
+            padding: 100px 50px;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .about-section {
+            padding: 50px;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin-right: 10px;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
-
-        .button:hover {
-            background-color: rgba(255, 255, 255, 0.4);
+        
+        .nav-item {
+            margin-bottom: 15px;
         }
-
-        #notesContent {
-            display: none;
-            margin-top: 20px;
-        }
-
-        #notesContent a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            margin: 10px 0;
-            font-size: 16px;
-        }
-
-        #notesContent a:hover {
-            text-decoration: underline;
-        }
-
-        #transition-text {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
+        
+        .skills-section {
+            background-color: #f0f0f0;
+            padding: 50px;
         }
     </style>
 </head>
 <body>
-    <h1 id="name" class="typewriter"></h1>
-    <p id="description" class="typewriter"></p>
+    <div class="sidebar">
+        <img src="path-to-your-profile-pic.jpg" alt="Your Name" class="profile-pic">
+        <h2>Your Name</h2>
+        <div class="social-icons">
+            <!-- Add your social media icons/links here -->
+        </div>
+        <nav>
+            <div class="nav-item">Home</div>
+            <div class="nav-item">About</div>
+            <div class="nav-item">Skills</div>
+            <div class="nav-item">Resume</div>
+            <div class="nav-item">Publications</div>
+            <div class="nav-item">Awards</div>
+        </nav>
+    </div>
     
-    <section>
-        <h2 id="about" class="typewriter"></h2>
-        <p id="interests" class="typewriter"></p>
-    </section>
-
-    <div class="button-container">
-        <a href="#about" class="button">About</a>
-        <a href="#research" class="button">Research</a>
-        <a href="#publications" class="button">Publications</a>
-        <a href="#notes" class="button" id="notesButton">Notes</a>
+    <div class="main-content">
+        <div class="hero">
+            <h1>Your Name</h1>
+            <p>Your tagline or brief description</p>
+        </div>
+        
+        <div class="about-section">
+            <h2>About</h2>
+            <p>Your brief bio goes here...</p>
+            
+            <h3>Some boring stuffs about me:</h3>
+            <!-- Add your personal details here -->
+        </div>
+        
+        <div class="skills-section">
+            <h2>Skills</h2>
+            <!-- Add your skills information here -->
+        </div>
     </div>
-
-    <div id="notesContent">
-        <a href="#quantum-field-theory">1. Quantum Field Theory</a>
-        <a href="#astrophysics-cosmology">2. Astrophysics and Cosmology</a>
-        <a href="#mathematical-physics">3. Mathematical Physics</a>
-        <a href="#electrodynamics">4. Electrodynamics</a>
-        <a href="#college-physics">5. College Physics</a>
-        <a href="#college-chemistry">6. College Chemistry</a>
-        <a href="#college-mathematics">7. College Mathematics</a>
-    </div>
-
-    <div id="transition-text">The small scale beauty of our Universe</div>
-
-    <script>
-        function typeWriter(element, text, i = 0) {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(() => typeWriter(element, text, i), 100);
-            }
-        }
-
-        window.onload = function() {
-            const elements = [
-                {id: 'name', text: "Hi I'm Santosh Poudel"},
-                {id: 'description', text: "A passionate physics student from Nepal"},
-                {id: 'about', text: "About"},
-                {id: 'interests', text: "I am interested in astrophysics and cosmology"}
-            ];
-
-            let delay = 0;
-            elements.forEach(item => {
-                setTimeout(() => {
-                    const element = document.getElementById(item.id);
-                    typeWriter(element, item.text);
-                }, delay);
-                delay += item.text.length * 100 + 1000; // Add extra delay between elements
-            });
-
-            // Background image rotation
-            const images = [
-                'https://www.cfa.harvard.edu/sites/default/files/styles/max_650x650/public/2019-04/LargeScaleStructure_2.jpg?itok=TQm0F06z',
-                'https://i.pinimg.com/originals/e2/a9/d8/e2a9d83cd8d405ebb931ddb5c65fe43c.jpg'
-            ];
-            const transitionText = document.getElementById('transition-text');
-
-            function changeBackground() {
-                document.body.style.backgroundImage = `url('${images[0]}')`;
-                setTimeout(() => {
-                    transitionText.style.opacity = '1';
-                    document.body.style.backgroundImage = `url('${images[1]}')`;
-                    setTimeout(() => {
-                        transitionText.style.opacity = '0';
-                    }, 3000);
-                }, 5000);
-            }
-
-            // Initial background set and single transition
-            changeBackground();
-
-            // Notes button functionality
-            const notesButton = document.getElementById('notesButton');
-            const notesContent = document.getElementById('notesContent');
-
-            notesButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                if (notesContent.style.display === 'none' || notesContent.style.display === '') {
-                    notesContent.style.display = 'block';
-                } else {
-                    notesContent.style.display = 'none';
-                }
-            });
-        };
-    </script>
 </body>
 </html>
