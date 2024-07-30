@@ -4,54 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Pages Site</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* CSS for the typewriter effect */
-        .typewriter {
-            display: inline; /* Ensure it takes only necessary space */
-            font-family: monospace;
-            overflow: hidden; /* Ensures that text doesn't overflow */
-            white-space: nowrap; /* Prevents text from wrapping */
-            border-right: .15em solid orange; /* The typewriter cursor */
-            animation: typing 4s steps(40, end), blink .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: orange; }
-        }
-
-        /* Additional styling for better readability */
         body {
             background-image: url('https://www.dunlap.utoronto.ca/wp-content/uploads/2017/03/galseq_D_063.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            color: white; /* Text color for better contrast */
+            color: white;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            text-align: center; /* Center the text */
+            text-align: center;
         }
         
         h1, h2, p {
             margin: 0;
             padding: 10px 0;
         }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
     </style>
 </head>
 <body>
-    <h1 class="typewriter">Hi I'm Santosh Poudel</h1>
-    <p class="typewriter">A passionate physics student from Nepal</p>
+    <h1 id="name" class="typewriter"></h1>
+    <p id="description" class="typewriter"></p>
     
     <section>
-        <h2 class="typewriter">About</h2>
-        <p class="typewriter">I am interested in astrophysics and cosmology</p>
+        <h2 id="about" class="typewriter"></h2>
+        <p id="interests" class="typewriter"></p>
     </section>
+
+    <script>
+        function typeWriter(element, text, i = 0) {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(() => typeWriter(element, text, i), 100);
+            }
+        }
+
+        window.onload = function() {
+            const elements = [
+                {id: 'name', text: "Hi I'm Santosh Poudel"},
+                {id: 'description', text: "A passionate physics student from Nepal"},
+                {id: 'about', text: "About"},
+                {id: 'interests', text: "I am interested in astrophysics and cosmology"}
+            ];
+
+            let delay = 0;
+            elements.forEach(item => {
+                setTimeout(() => {
+                    const element = document.getElementById(item.id);
+                    typeWriter(element, item.text);
+                }, delay);
+                delay += item.text.length * 100 + 1000; // Add extra delay between elements
+            });
+        };
+    </script>
 </body>
 </html>
