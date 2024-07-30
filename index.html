@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santosh Poudel - Personal Website</title>
+    <title>Santosh Poudel - Resume</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -21,53 +21,47 @@
             text-align: center;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+        h2 {
+            color: #007BFF;
+            margin-bottom: 10px;
         }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
             padding: 20px;
-        }
-
-        section {
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            padding: 20px;
-            width: 300px;
-            transition: transform 0.2s;
         }
 
-        section:hover {
-            transform: scale(1.05);
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .section-content {
-            display: none;
+            margin-left: 20px;
         }
 
-        .section-content.active {
-            display: block;
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
         }
 
         footer {
@@ -79,74 +73,69 @@
             bottom: 0;
             width: 100%;
         }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hi there!</h1>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="toggleSection('about'); return false;">About</a></li>
-                <li><a href="#" onclick="toggleSection('research'); return false;">Research</a></li>
-                <li><a href="#" onclick="toggleSection('publications'); return false;">Publications</a></li>
-                <li><a href="#" onclick="toggleSection('notes'); return false;">Notes</a></li>
-            </ul>
-        </nav>
+        <h1>Santosh Poudel</h1>
+        <p>Aspiring Astrophysicist & Researcher</p>
     </header>
 
-    <main>
-        <section id="about" class="section-content active">
-            <h2>About Me</h2>
-            <p>I love studying the Universe.</p>
-            <p>I want to do research in Astrophysics and Cosmology.</p>
-        </section>
+    <div class="container">
+        <div class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="section-content">
+                <p>I am passionate about studying the Universe and aim to contribute to the fields of Astrophysics and Cosmology.</p>
+            </div>
+        </div>
 
-        <section id="research" class="section-content">
-            <h2>My Research</h2>
-            <p>My research interests are:</p>
-            <ul>
-                <li>Cosmic Voids</li>
-                <li>Study of variable stars for cosmic distance measurement</li>
-                <li>Cosmic Microwave Background Radiation</li>
-            </ul>
-            <p>During my academic and research journey, I have developed skills in computational as well as theoretical physics.</p>
-        </section>
+        <div class="section">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="section-content">
+                <ul>
+                    <li>Cosmic Voids</li>
+                    <li>Study of variable stars for cosmic distance measurement</li>
+                    <li>Cosmic Microwave Background Radiation</li>
+                </ul>
+            </div>
+        </div>
 
-        <section id="publications" class="section-content">
-            <h2>Publications</h2>
-            <p>I have published a few papers in national and international journals, including:</p>
-            <ol>
-                <li>Multimode Pulsation analysis in ...</li>
-                <li>Optimization of ...</li>
-            </ol>
-            <p>You can find my complete publication list on <a href="https://scholar.google.com/citations?user=example_user_id">Google Scholar</a>.</p>
-        </section>
+        <div class="section">
+            <h2 class="section-title">Publications</h2>
+            <div class="section-content">
+                <p>I have published several papers in national and international journals, including:</p>
+                <ul>
+                    <li>Multimode Pulsation Analysis in ...</li>
+                    <li>Optimization of ...</li>
+                </ul>
+                <p>You can find my complete publication list on <a href="https://scholar.google.com/citations?user=example_user_id">Google Scholar</a>.</p>
+            </div>
+        </div>
 
-        <section id="notes" class="section-content">
-            <h2>My Notes</h2>
-            <p>I have compiled a collection of notes and resources on various topics in astronomy, astrophysics, and theoretical physics. Feel free to explore:</p>
-            <ul>
-                <li><a href="notes/astro.pdf">Ex</a></li>
-                <li><a href="notes/cosmo.pdf">Ste</a></li>
-                <li><a href="notes/computational_methods.pdf">Computational Methods in Astrophysics</a></li>
-            </ul>
-        </section>
-    </main>
+        <div class="section">
+            <h2 class="section-title">My Notes</h2>
+            <div class="section-content">
+                <p>I have compiled a collection of notes and resources on various topics in astronomy, astrophysics, and theoretical physics:</p>
+                <ul>
+                    <li><a href="notes/astro.pdf">Ex</a></li>
+                    <li><a href="notes/cosmo.pdf">Ste</a></li>
+                    <li><a href="notes/computational_methods.pdf">Computational Methods in Astrophysics</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2024 Santosh Poudel. All rights reserved.</p>
     </footer>
-
-    <script>
-        function toggleSection(sectionId) {
-            var sections = document.querySelectorAll('.section-content');
-            sections.forEach(function(section) {
-                section.classList.remove('active');
-            });
-            
-            var selectedSection = document.getElementById(sectionId);
-            selectedSection.classList.add('active');
-        }
-    </script>
 </body>
 </html>
