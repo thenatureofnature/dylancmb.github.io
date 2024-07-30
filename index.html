@@ -6,86 +6,13 @@
     <title>Surendra Bhattarai - Personal Website</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+        /* Add your CSS styles here */
+        .section-content {
+            display: none;
         }
-
-        header {
-            background: #0077cc;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: #005fa3;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        section {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-bottom: 1px solid #eaeaea;
-        }
-
-        h1, h2 {
-            color: #0077cc;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #0077cc;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 0;
-            background: #0077cc;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .button:hover {
-            background: #005fa3;
+        
+        .section-content.active {
+            display: block;
         }
     </style>
 </head>
@@ -94,57 +21,68 @@
         <h1>Hello & Namaste!</h1>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#notes">Notes</a></li>
+                <li><a href="#" onclick="toggleSection('about'); return false;">About</a></li>
+                <li><a href="#" onclick="toggleSection('research'); return false;">Research</a></li>
+                <li><a href="#" onclick="toggleSection('publications'); return false;">Publications</a></li>
+                <li><a href="#" onclick="toggleSection('notes'); return false;">Notes</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="about">
+        <section id="about" class="section-content">
             <h2>About Me</h2>
-            <p>I am a passionate researcher with a deep love for studying the universe. Currently, I am a 5th year BS-MS student at IISER Kolkata, majoring in Physics, and working on my Master's thesis at IISc Bangalore.</p>
-            <p>I intend to continue my research in the fields of exoplanets, star-planet interaction, and stellar evolution.</p>
-            <a href="mailto:sb19ms136@iiserkol.ac.in" class="button">Contact Me</a>
+            <p>I am a crazy guy with a deep love for studying the universe. Currently, I am a 5th year BS-MS student at Indian Institute of Science Education and Research (IISER) Kolkata, majoring in Physics. I am doing my final year Master's thesis project at Indian Institute of Science (IISc) Bangalore.</p>
+            <p>I intend to continue my research in the field of exoplanets, star-planet interaction, and stellar evolution.</p>
         </section>
 
-        <section id="research">
+        <section id="research" class="section-content">
             <h2>My Research</h2>
-            <p>My research focuses on:</p>
+            <p>My research focuses on various aspects of exoplanets and stellar astrophysics, including:</p>
             <ul>
                 <li>Exoplanet detection and characterization</li>
-                <li>Star-planet interactions</li>
-                <li>Stellar evolution</li>
+                <li>Star-planet interactions and their impact on planetary systems</li>
+                <li>Stellar evolution and its connection to planetary systems</li>
             </ul>
-            <p>I utilize high-performance computing, machine learning, and statistical analysis in my work.</p>
+            <p>I utilize a range of techniques such as high-performance computing, machine learning, and statistical analysis to tackle these research problems.</p>
         </section>
 
-        <section id="publications">
+        <section id="publications" class="section-content">
             <h2>Publications</h2>
-            <p>Here are some of my publications:</p>
+            <p>I have published several papers in peer-reviewed journals, including:</p>
             <ol>
-                <li><strong>VaTEST III:</strong> Validation of 8 Potential Super-Earths from TESS Data (2024)</li>
-                <li><strong>VaTEST II:</strong> Statistical Validation of 11 TESS-Detected Exoplanets (2023)</li>
-                <li><strong>VaTEST I:</strong> Validation of Sub-Saturn Exoplanet TOI-181b (2023)</li>
+                <li>VaTEST III: Validation of 8 Potential Super-Earths from TESS Data (2024)</li>
+                <li>VaTEST II: Statistical Validation of 11 TESS-Detected Exoplanets Orbiting K-type Stars (2023)</li>
+                <li>VaTEST I: Validation of Sub-Saturn Exoplanet TOI-181b in Narrow Orbit from its Host Star (2023)</li>
             </ol>
-            <p>Find my complete publication list on <a href="https://scholar.google.com/citations?user=example_user_id">Google Scholar</a>.</p>
+            <p>You can find my complete publication list on <a href="https://scholar.google.com/citations?user=example_user_id">Google Scholar</a>.</p>
         </section>
 
-        <section id="notes">
+        <section id="notes" class="section-content">
             <h2>My Notes</h2>
-            <p>Explore my collection of notes and resources:</p>
+            <p>I have compiled a collection of notes and resources on various topics in astronomy and astrophysics. Feel free to explore:</p>
             <ul>
-                <li><a href="notes/exoplanets.pdf" class="button">Exoplanets</a></li>
-                <li><a href="notes/stellar_evolution.pdf" class="button">Stellar Evolution</a></li>
-                <li><a href="notes/computational_methods.pdf" class="button">Computational Methods</a></li>
+                <li><a href="notes/exoplanets.pdf">Exoplanets</a></li>
+                <li><a href="notes/stellar_evolution.pdf">Stellar Evolution</a></li>
+                <li><a href="notes/computational_methods.pdf">Computational Methods in Astrophysics</a></li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Surendra Bhattarai. All rights reserved.</p>
+        <p>&copy; 2023 Surendra Bhattarai. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            var sections = document.querySelectorAll('.section-content');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            
+            var selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+        }
+    </script>
 </body>
 </html>
