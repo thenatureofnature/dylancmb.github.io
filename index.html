@@ -410,14 +410,14 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const element = document.getElementById('typed-text');
-        const text = element.innerHTML;
-        element.innerHTML = '';
+        const text = element.textContent;
+        element.textContent = '';
         let i = 0;
         const speed = 50; // Milliseconds per character
 
         function typeWriter() {
             if (i < text.length) {
-                element.innerHTML += text.charAt(i);
+                element.textContent += text.charAt(i);
                 i++;
                 setTimeout(typeWriter, speed);
             }
