@@ -287,7 +287,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Santosh Poudel</h1>
-            <p>Exploring the Cosmos, Unraveling the Universe's Mysteries</p>
+            <p id="typed-text">Exploring the Cosmos, Unraveling the Universe's Mysteries</p>
             <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
     </section>
@@ -405,6 +405,26 @@
         };
         window.addEventListener('scroll', revealElementsOnScroll);
         revealElementsOnScroll(); // Call once to check initial state
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const element = document.getElementById('typed-text');
+        const text = element.innerHTML;
+        element.innerHTML = '';
+        let i = 0;
+        const speed = 50; // Milliseconds per character
+
+        function typeWriter() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        typeWriter();
+    });
     </script>
 </body>
 </html>
