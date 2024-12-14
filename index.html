@@ -228,6 +228,52 @@
             margin-bottom: 0.5rem;
         }
 
+
+
+
+
+
+
+
+
+
+        .publications-list {
+             list-style-type: none;
+        }
+
+        
+       .publication-item {
+             background-color: var(--card-bg);
+               padding: 1.5rem;
+              border-radius: 10px;
+             margin-bottom: 1rem;
+        }
+
+/* Existing styles for h3 headings within publication items */
+.publication-item h3 {
+    color: var(--text-color-light); /* Keep headings consistent with the light theme */
+    margin-bottom: 0.5rem;
+}
+
+/* Existing styles for paragraph text within publication items */
+.publication-item p {
+    font-size: 0.9rem;
+}
+
+/* New styles for links (<a>) within publication items */
+.publication-item a {
+    color: var(--text-color-light); /* Matches the light text color for consistency */
+    text-decoration: none; /* Removes the default underline */
+    font-weight: 600; /* Makes the link text slightly bold */
+    transition: color 0.3s ease; /* Adds a smooth hover transition */
+}
+
+/* New hover effect for links */
+.publication-item a:hover {
+    color: var(--accent-color); /* Changes to the accent color on hover */
+    text-decoration: underline; /* Optional: Adds underline when hovering */
+}
+
         .publications-list {
             list-style-type: none;
         }
@@ -373,7 +419,7 @@
                 </a>
             </h3>
             <p>Authors: Poudel, Lamichhane</p>
-            <p>Presented at: [Conference/Location]</p>
+            <p>Presented at: [Central Department of Physics]</p>
         </li>
     </ul>
 </section>
