@@ -3,9 +3,21 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: white; /* Optional: Adjust text color for better contrast */
-    text-align: center; /* Optional: Center the text */
-    padding: 50px; /* Optional: Add some padding for better spacing */
+    color: white; 
+    text-align: center; 
+    padding: 50px; 
+}
+
+
+a {
+    color: white; 
+    text-decoration: none; 
+}
+
+
+a:hover {
+    color: lightgray; 
+    text-decoration: underline; 
 }
 
 h1, p {
