@@ -1,10 +1,10 @@
 <div class="pdf-list">
-    <a href="pdfs/electrodynamics/Why conservation laws arises.pdf" target="_blank">Why Conservation Laws Arise</a>
-    <a href="pdfs/electrodynamics/The cannonical stress tensor.pdf" target="_blank">The Canonical Stress Tensor</a>
-    <a href="pdfs/electrodynamics/Lagrangian for the electromagnetic field ( Transition from particle to field ).pdf" target="_blank">Lagrangian for Electromagnetic Field</a>
-    <a href="pdfs/electrodynamics/Covariant treatment(Intro).pdf" target="_blank">Covariant Treatment (Intro)</a>
-    <a href="pdfs/electrodynamics/Hamiltonian of relativistic charged particle.pdf" target="_blank">Hamiltonian of Relativistic Charged Particle</a>
-    <a href="pdfs/electrodynamics/Motion in combined uniform, static Electric and Magnetic fields.pdf" target="_blank">Motion in Combined Electric and Magnetic Fields</a>
-    <a href="pdfs/electrodynamics/Motion in a uniform and static magnetic field.pdf" target="_blank">Motion in Uniform Magnetic Field</a>
-    <a href="pdfs/electrodynamics/Lagrangian for relativistic motion of free particle.pdf" target="_blank">Lagrangian for Relativistic Motion of Free Particle</a>
+    <a href="pdf/electrodynamics/Why conservation laws arises.pdf" target="_blank">Why Conservation Laws Arise</a>
+    <a href="pdf/electrodynamics/The cannonical stress tensor.pdf" target="_blank">The Canonical Stress Tensor</a>
+    <a href="pdf/electrodynamics/Lagrangian for the electromagnetic field ( Transition from particle to field ).pdf" target="_blank">Lagrangian for Electromagnetic Field</a>
+    <a href="pdf/electrodynamics/Covariant treatment(Intro).pdf" target="_blank">Covariant Treatment (Intro)</a>
+    <a href="pdf/electrodynamics/Hamiltonian of relativistic charged particle.pdf" target="_blank">Hamiltonian of Relativistic Charged Particle</a>
+    <a href="pdf/electrodynamics/Motion in combined uniform, static Electric and Magnetic fields.pdf" target="_blank">Motion in Combined Electric and Magnetic Fields</a>
+    <a href="pdf/electrodynamics/Motion in a uniform and static magnetic field.pdf" target="_blank">Motion in Uniform Magnetic Field</a>
+    <a href="pdf/electrodynamics/Lagrangian for relativistic motion of free particle.pdf" target="_blank">Lagrangian for Relativistic Motion of Free Particle</a>
 </div>
